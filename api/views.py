@@ -4,8 +4,7 @@ from .serializers import URLSerializer, ResultSerializer
 from .utils import analyze_url
 
 class URLAnalyzerView(APIView):
-    def post(self, request):
-        return Response({}, status=200)
+    def post(self, request): 
         serializer = URLSerializer(data=request.data)
         if serializer.is_valid():
             url = serializer.validated_data['url']
